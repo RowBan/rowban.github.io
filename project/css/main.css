@@ -1,6 +1,6 @@
 :root {
     --scale: calc(100vw / 1920 * (1920 / 1920));
-    --bg-primary: #fff;
+    --bg-primary: #242526;
     --bg-secondary: #f5f5f5;
     --text-primary: #000;
     --text-secondary: #9c0000;
