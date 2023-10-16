@@ -1,12 +1,12 @@
 /**********************/
-/*	Main starts here  */
+/* Footer starts here */
 /**********************/
-.main-grid-1-1 {
+.footer-grid-1-1 {
 	border: 3px solid white;
-	grid-column: 1 / 4;
+	grid-column: 1 / -1;
 }
 
-.main-grid-1-2 {
+.footer-grid-1-2 {
 	border: 3px solid white;
-	grid-column: 4 / -1;
+	grid-column: 1 / -1;
 }
