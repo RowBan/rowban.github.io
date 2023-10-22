@@ -4,7 +4,6 @@
 
 /* Top part of header */
 .header-grid-1-1 {
-	border: 2px dotted red;
 	background-color: black;
 	max-height: 3.2rem;
 	grid-column: 1 / -1;
@@ -14,16 +13,21 @@
 	display: grid;
 	grid-template: 1fr / repeat(2, 1fr);
 	align-content: center;
-	align-items: center;
-	justify-content: center;
-	justify-items: center;
-	/* 	display: flex;
-	align-items: center;
-	justify-content: space-between; */
-	border: 2px dotted red;
 	max-height: inherit;
 	color: var(--white);
 	font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+	.header-top-list li:nth-last-child(1) {
+		display: none;
+	}
+}
+
+@media (max-width: 486px) {
+	.header-top-list li:nth-last-child(2) {
+		display: none;
+	}
 }
 
 .header-top-list {
@@ -34,6 +38,7 @@
 }
 
 .header-top-list li {
+	margin-left: 1rem;
 	display: inherit;
 	align-items: center;
 }
@@ -43,29 +48,6 @@
 	align-items: center;
 	justify-self: end;
 }
-/*
-.lightswitch {
-	display: flex;
-	align-items: center;
-	background-color: #666;
-	position: relative;
-	border-radius: 4rem;
-	font-size: 0;
-	height: 1.6rem;
-	margin: 0;
-	padding: 0.2rem;
-	width: 3rem;
-}
-
-.lightswitch::after {
-	position: absolute;
-	background-color: #fff;
-	border-radius: 50%;
-	height: 1.5rem;
-	width: 1.5rem;
-	content: "";
-	transition: right 0.15s ease;
-} */
 
 .lightswitch {
 	position: relative;
@@ -74,20 +56,17 @@
 }
 
 /* The slider */
-.slider {
+.lightswitch-slider {
 	position: absolute;
 	cursor: pointer;
 	border-radius: 40px;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	inset: 0;
 	background-color: #666;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
 }
 
-.slider::after {
+.lightswitch-slider::after {
 	position: absolute;
 	content: "";
 	height: 1.5rem;
@@ -106,37 +85,69 @@
 	height: 0;
 }
 
-.lightswitch input:checked + .slider::after {
+.lightswitch input:checked + .lightswitch-slider::after {
 	transform: translateX(2.5rem);
 }
 
 /* Middle part of header */
 .header-grid-1-2 {
-	border: 3px dotted green;
+	/* border: 3px dotted green; */
 	grid-column: 1 / -1;
 	max-height: 5.6rem;
+	margin: 1%;
 }
 
 .header-mid {
 	display: grid;
 	grid-template: 1fr / 1fr 2fr 1fr;
+	justify-items: center;
 	align-items: center;
-	border: 3px dotted green;
+	/* border: 3px dotted green; */
 	max-height: inherit;
 }
 
+.header-logo span {
+	display: none; /* Hide in mobile */
+}
+
+/* Logo */
+@media (min-width: 768px) {
+	.header-logo,
+	.header-logo span,
+	.header-logo a {
+		display: flex;
+		justify-self: start;
+		align-items: center;
+		text-decoration: none;
+	}
+}
+
+/* Search bar */
 .header-search-bar {
 	display: flex;
 	align-items: center;
 	background-color: #191a1b;
 	border: 1px solid #101010;
-	width: 100%;
+	width: clamp(15rem, 40vw, 100%);
 	border-radius: 2%;
 	height: 3.8rem;
+	overflow: hidden;
 }
 
 .header-search-bar input {
 	all: unset;
+}
+
+.header-search-bar svg {
+	margin-right: 1rem;
+	width: 2.5rem;
+	height: auto;
+}
+
+.header-search-bar form {
+	display: flex;
+	justify-content: center;
+	font-size: 1.2rem;
 }
 
 .header-grid-1-2 img {
@@ -150,8 +161,57 @@
 	justify-self: end;
 }
 
+.header-cart button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 700;
+	width: clamp(7rem, 10vw, 15rem);
+	height: 3rem;
+	background-color: var(--green);
+	border-radius: 0.2rem;
+	font-size: 1.2rem;
+	border: none;
+	cursor: pointer;
+	color: var(--white);
+	margin: 2%;
+}
+
+.header-cart button svg {
+	margin: 2%;
+}
+
 /* Lower part of header */
 .header-grid-1-3 {
-	border: 3px solid white;
-	grid-column: 1 / -1;
+	display: none; /* Hide in mobile */
+}
+
+@media (min-width: 768px) {
+	.header-grid-1-3 {
+		display: block; /* Need this */
+		grid-column: 1 / -1;
+		background-color: var(--bg-foreground);
+		border-bottom: 1px solid #373a3b;
+		padding: 1%;
+	}
+
+	.header-bottom-list {
+		display: flex;
+		justify-content: space-evenly;
+		list-style: none;
+		font-weight: 700;
+		font-size: 2rem;
+	}
+
+	.header-bottom-list a {
+		text-decoration: none;
+	}
+
+	.header-bottom-list li:hover {
+		background-color: var(--bg-primary);
+	}
+
+	.header-bottom-list .header-bottom-nav-item svg {
+		display: none;
+	}
 }
