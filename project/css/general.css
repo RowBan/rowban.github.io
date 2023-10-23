@@ -20,6 +20,7 @@
 	--green: #42a512;
 	--white: #fff;
 	font-size: 62.5%;
+	/* background: url("../img/Circuit\ Board.svg") no-repeat center center fixed; */
 	background-color: var(--bg-primary);
 	color: var(--text-primary);
 }
