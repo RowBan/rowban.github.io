@@ -25,18 +25,14 @@
 	color: var(--text-primary);
 }
 
-:link {
-	color: var(--text-primary);
-}
-
-a:hover,
+/* a:hover,
 a:focus {
 	color: var(--focushover);
 	text-decoration: underline;
-}
+} */
 
 a:visited {
-	color: inherit;
+	color: var(--text-primary);
 }
 
 a {
