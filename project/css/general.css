@@ -7,9 +7,6 @@
 	margin: 0;
 	padding: 0;
 }
-:link {
-	--text-primary: #e1e1e1;
-}
 
 :root {
 	font-family: "Inter", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
