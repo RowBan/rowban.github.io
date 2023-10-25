@@ -211,13 +211,11 @@
 
 	.header-bottom-list > li:hover {
 		border-radius: 1rem 1rem 0 0;
-		outline: 1px solid #373a3b;
 		background-color: var(--bg-primary);
-		z-index: 1;
 	}
 
-	.header-bottom-list .header-bottom-nav-item svg {
-		display: none;
+	.header-bottom-list > li:nth-last-child(-n + 2):hover {
+		border-radius: 1rem;
 	}
 
 	.header-bottom-nav-item {
@@ -238,13 +236,5 @@
 
 	.header-bottom-nav-item:hover .header-bottom-dropdown {
 		display: block;
-		border-left: 1px solid #373a3b;
-		border-right: 1px solid #373a3b;
-		border-bottom: 1px solid #373a3b;
-		z-index: 2;
-	}
-
-	.header-bottom-dropdown-items a {
-		/* Style links here */
 	}
 }
