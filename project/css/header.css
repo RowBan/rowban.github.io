@@ -119,6 +119,7 @@
 		justify-self: start;
 		align-items: center;
 		text-decoration: none;
+		color: var(--text-primary);
 	}
 }
 
@@ -205,11 +206,14 @@
 
 	.header-bottom-list a {
 		text-decoration: none;
+		color: var(--text-primary);
 	}
 
-	.header-bottom-list li:hover {
+	.header-bottom-list > li:hover {
 		border-radius: 1rem 1rem 0 0;
+		outline: 1px solid #373a3b;
 		background-color: var(--bg-primary);
+		z-index: 1;
 	}
 
 	.header-bottom-list .header-bottom-nav-item svg {
@@ -227,14 +231,17 @@
 		list-style: inherit;
 		padding: inherit;
 		background-color: var(--bg-primary);
-		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-		z-index: 1;
+		border-radius: 0 1rem 1rem;
 		left: 0;
-		top: 100%;
+		top: 90%;
 	}
 
 	.header-bottom-nav-item:hover .header-bottom-dropdown {
 		display: block;
+		border-left: 1px solid #373a3b;
+		border-right: 1px solid #373a3b;
+		border-bottom: 1px solid #373a3b;
+		z-index: 2;
 	}
 
 	.header-bottom-dropdown-items a {
